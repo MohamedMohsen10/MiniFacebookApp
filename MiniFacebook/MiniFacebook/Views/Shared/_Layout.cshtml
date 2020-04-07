@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿
+@inject SignInManager<User> signInManager;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -23,7 +26,25 @@
                         <div class="navbar-nav ml-auto">
                             <a class="nav-item nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
                             <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            <partial name="_LoginPartial" />
+                            @if (signInManager.IsSignedIn(User))
+                            {
+                                <li class="nav-item">
+                                    <form method="post" asp-action="logout" asp-controller="account">
+                                        <button type="submit" class="nav-link btn btn-link py-0">
+                                            Logout @User.Identity.Name
+                                        </button>
+                                    </form>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="account" asp-action="register">Register</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="account" asp-action="login">Login</a>
+                                </li>
+                            }
                         </div>
                     </div>
                 </div>
@@ -58,6 +79,8 @@
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/all.js"></script>
