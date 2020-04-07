@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using MiniFacebook.Data;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -39,14 +40,24 @@ namespace MiniFacebook
             services.AddRazorPages();
             services.AddIdentity<User, Role>(options=> {
                 options.Password.RequireNonAlphanumeric = false;
-            }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultUI();
-            services.AddScoped<IUserRepo, UserRepo>();
+                options.SignIn.RequireConfirmedEmail = true;
+            }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultUI().AddDefaultTokenProviders();
             services.AddScoped<IPostRepo, PostRepo>();
             services.AddScoped<ICommentRepo, CommentRepo>();
             services.AddScoped<ICommentLikeRepo, CommentLikeRepo>();
             services.AddScoped<IPostLikeRepo, PostLikeRepo>();
             services.AddScoped<IFriendRepo, FriendRepo>();
-            services.AddScoped<IRoleRepo, RoleRepo>();
+            services.AddAuthentication()
+                .AddGoogle(options =>
+                {
+                    options.ClientId = "582746702048-1kftodbtd22ah60jg3gaog4f1oaj3nme.apps.googleusercontent.com";
+                    options.ClientSecret = "PRALaGagZ6bbtNSqJHUI6iyg";
+                })
+            .AddFacebook(options =>
+             {
+                 options.ClientId = "213078056693180";
+                 options.ClientSecret = "9eec6c17f3b9104ea35e22572dcb1259";
+             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
