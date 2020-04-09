@@ -15,6 +15,10 @@ namespace MiniFacebook.Models.Entities
     {
         blocked,notblocked
     }
+    public enum UserRole
+    {
+        Admin, User
+    }
     public class User:IdentityUser
     {
         public Gender Gender { get; set; }
@@ -24,7 +28,8 @@ namespace MiniFacebook.Models.Entities
         [AllowNull]
         public string ProfilePic { get; set; }
         
-        public UserState UserState { get; set; }
+        public bool UserState { get; set; }
+        public bool UserRole { get; set; }
         public virtual ICollection<Post> Posts{ get; set; }
         public virtual ICollection<Friend> Friends{ get; set; }
         public virtual ICollection<PostLike> PostLikes{ get; set; }
