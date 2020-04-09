@@ -729,3 +729,14 @@ H:\xx\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\MiniFace
 H:\xx\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\MiniFacebook.MvcApplicationPartsAssemblyInfo.cache
 H:\xx\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Account\ConfirmEmail.cshtml.g.cs
 H:\xx\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\bin\Debug\netcoreapp3.1\MailKit.dll
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\bin\Debug\netcoreapp3.1\MimeKit.dll
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Account\ConfirmEmail.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Shared\SuccessfulRegistration.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Admin.cshtml.g.cs
