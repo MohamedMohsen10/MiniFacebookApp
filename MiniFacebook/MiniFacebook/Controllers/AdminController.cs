@@ -14,11 +14,14 @@ namespace MiniFacebook.Controllers
     {
 
         private readonly UserManager<User> userManager;
-        
-        public AdminController(UserManager<User> userManager, SignInManager<User> signInManager)
+        //private readonly RoleManager<User> roleManager;
+        public readonly UserState userState = new UserState();
+        public readonly UserRole userRole = new UserRole();
+
+        public AdminController(UserManager<User> userManager /*,RoleManager<User> roleManager*/)
         {
             this.userManager = userManager;
-           
+        //    this.roleManager = roleManager;
         }
 
         //public async Task<List<IdentityUser>> GetUsersAsync()
@@ -31,7 +34,31 @@ namespace MiniFacebook.Controllers
         [HttpGet]
         public IActionResult Users()
         {
-            return View(userManager.Users.ToList());
+            //ViewBag.Role = userRole;
+            //ViewBag.userState = userState;
+
+          //  ViewBag.Authority = roleManager.Roles;
+            return View(userManager);
         }
+
+
+
+        [HttpPost]
+        public IActionResult Users(User adminInput)
+        {
+            //if(adminInput.UserState==)
+
+            if (ModelState.IsValid) {
+                userManager.UpdateAsync(adminInput); 
+            }
+            return View(userManager);
+        }
+
+
+
+
+
+
+
     }
 }

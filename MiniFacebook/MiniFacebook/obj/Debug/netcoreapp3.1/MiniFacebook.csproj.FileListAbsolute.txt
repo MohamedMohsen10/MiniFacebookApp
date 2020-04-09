@@ -537,7 +537,6 @@ E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebo
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\MiniFacebook.csprojAssemblyReference.cache
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\staticwebassets\MiniFacebook.StaticWebAssets.Manifest.cache
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\staticwebassets\MiniFacebook.StaticWebAssets.xml
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\MiniFacebook.MvcApplicationPartsAssemblyInfo.cs
@@ -739,4 +738,4 @@ E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebo
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Shared\SuccessfulRegistration.cshtml.g.cs
-E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Admin.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Users.cshtml.g.cs

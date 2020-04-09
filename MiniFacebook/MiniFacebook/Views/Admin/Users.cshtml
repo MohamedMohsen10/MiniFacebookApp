@@ -1,0 +1,38 @@
+﻿@model UserManager<User>;
+
+
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<body>
+    
+    <table class="table bg-dark">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Block State</th>
+                <th scope="col">Authority</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>test</td>
+            </tr>
+            @{
+                foreach (var item in Model.Users)
+                {
+                    <tr>
+                        <th scope="row">@item.UserName</th>
+
+                        <td><input type="checkbox" name="blockState" asp-for="@item.UserState" value="true"/></td>
+                        <td><input type="checkbox" name="adminState" asp-for="@item.UserRole" value="true"/></td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</body>
+
+
