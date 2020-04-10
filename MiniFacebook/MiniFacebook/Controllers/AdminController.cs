@@ -14,14 +14,18 @@ namespace MiniFacebook.Controllers
     {
 
         private readonly UserManager<User> userManager;
+        private UserManager<User> userSearchManager;
+        //private RoleManager<User> roleManager;
+
         //private readonly RoleManager<User> roleManager;
         public readonly UserState userState = new UserState();
         public readonly UserRole userRole = new UserRole();
 
-        public AdminController(UserManager<User> userManager /*,RoleManager<User> roleManager*/)
+        public AdminController(UserManager<User> userManager, UserManager<User>  userSearchManager /*,RoleManager<User> roleManager*/)
         {
             this.userManager = userManager;
-        //    this.roleManager = roleManager;
+            //this.roleManager = roleManager;
+            this.userSearchManager = userSearchManager;
         }
 
         //public async Task<List<IdentityUser>> GetUsersAsync()
@@ -31,27 +35,117 @@ namespace MiniFacebook.Controllers
         //        return await context.Users.ToListAsync();
         //    }
         //}
-        [HttpGet]
-        public IActionResult Users()
-        {
-            //ViewBag.Role = userRole;
-            //ViewBag.userState = userState;
 
-          //  ViewBag.Authority = roleManager.Roles;
-            return View(userManager);
+        [HttpGet]
+        public IActionResult Index() {
+
+            return Users(null);
         }
 
 
 
+
+        [HttpGet]
+        public IActionResult Users(string Usrname)
+        {
+            if (Usrname == null)
+            {
+                return View(userManager.Users);
+            }
+            else {
+                var _users = userManager.Users.Where((a) => a.UserName.Contains(Usrname));
+                //foreach (var _user in _users)
+                // userSearchManager.UpdateAsync(_user);
+                return View(_users);
+            }
+
+
+            //ViewBag.Role = userRole;
+            //ViewBag.userState = userState;
+
+            //  ViewBag.Authority = roleManager.Roles;
+        }
+
+
+
+        //[HttpPost]
+        //public async Task<IActionResult> UsersAsync(User adminInput)
+        //{
+        //    //if(adminInput.UserState==)
+
+        //    if (ModelState.IsValid) {
+        //        //roleManager.FindByIdAsync(adminInput.Id).Status;
+        //        //foreach (var item in adminInput)
+        //        //{
+        //            var _user = userManager.Users.FirstOrDefault((a) => a.Id == adminInput.Id);
+        //            _user.UserState = adminInput.UserState;
+        //            _user.UserRole = adminInput.UserRole;
+        //            //userManager.UpdateAsync(adminInput);
+        //            IdentityResult x = await userManager.UpdateAsync(_user);
+
+        //        //}
+        //        return View(userManager);
+        //    }
+        //    return View();
+        //}
+
+
+
+        
+
         [HttpPost]
-        public IActionResult Users(User adminInput)
+        public async Task<IActionResult> UsersAsync(User adminInput,string Usrname)
         {
             //if(adminInput.UserState==)
 
-            if (ModelState.IsValid) {
-                userManager.UpdateAsync(adminInput); 
+
+
+            if (Usrname == null)
+            {
+                if (ModelState.IsValid)
+                {
+                    //roleManager.FindByIdAsync(adminInput.Id).Status;
+                    //foreach (var item in adminInput)
+                    //{
+                    var _user = userManager.Users.FirstOrDefault((a) => a.Id == adminInput.Id);
+                    _user.UserState = adminInput.UserState;
+                    _user.UserRole = adminInput.UserRole;
+                    //userManager.UpdateAsync(adminInput);
+                    IdentityResult x = await userManager.UpdateAsync(_user);
+
+                    //}
+                    return View(userManager.Users);
+                }
             }
-            return View(userManager);
+
+            else
+            {
+                var _users = userManager.Users.Where((a) => a.UserName.Contains(Usrname));
+                //foreach (var _user in _users)
+                // userSearchManager.UpdateAsync(_user);
+
+
+                if (ModelState.IsValid)
+                {
+                    //roleManager.FindByIdAsync(adminInput.Id).Status;
+                    //foreach (var item in adminInput)
+                    //{
+                    var _user = userManager.Users.FirstOrDefault((a) => a.Id == adminInput.Id);
+                    _user.UserState = adminInput.UserState;
+                    _user.UserRole = adminInput.UserRole;
+                    //userManager.UpdateAsync(adminInput);
+                    IdentityResult x = await userManager.UpdateAsync(_user);
+
+                    //}
+                    return View(_users);
+                }
+
+                return View(_users);
+            }
+
+
+
+            return View();
         }
 
 
