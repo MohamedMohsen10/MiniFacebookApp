@@ -739,3 +739,5 @@ E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebo
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Shared\SuccessfulRegistration.cshtml.g.cs
 E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Users.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\MiniFacebook.csprojAssemblyReference.cache
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
