@@ -47,6 +47,7 @@ namespace MiniFacebook
             services.AddScoped<ICommentLikeRepo, CommentLikeRepo>();
             services.AddScoped<IPostLikeRepo, PostLikeRepo>();
             services.AddScoped<IFriendRepo, FriendRepo>();
+            services.AddSession(options => { });
             services.AddAuthentication()
                 .AddGoogle(options =>
                 {

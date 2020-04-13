@@ -1,0 +1,36 @@
+﻿
+.pad-2{
+    padding:1%;
+}
+.card-header{
+    background-color:white;
+}
+.no-resize{
+    resize:none
+}
+.vertical-mid {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+.mar-btm{
+    margin-bottom:20px;
+}
+.circle{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+}
+.center {
+    margin-left: 27%;
+    width: 48.8%;
+    margin-top:20px;
+}
+.border-rad{
+    border-radius:20px;
+}
+body {
+}
+.dis-none{
+    display:none;
+}

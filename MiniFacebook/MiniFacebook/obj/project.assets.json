@@ -9364,20 +9364,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\EL.LORD.MOHAMED\\.nuget\\packages\\": {}
+    "C:\\Users\\Moustafa\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Mohamed\\ITI\\26.MVC\\Project\\GitProject\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+      "projectUniqueName": "H:\\hazmtask\\Hazmmergetask\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
       "projectName": "MiniFacebook",
-      "projectPath": "E:\\Mohamed\\ITI\\26.MVC\\Project\\GitProject\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
-      "packagesPath": "C:\\Users\\EL.LORD.MOHAMED\\.nuget\\packages\\",
-      "outputPath": "E:\\Mohamed\\ITI\\26.MVC\\Project\\GitProject\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
+      "projectPath": "H:\\hazmtask\\Hazmmergetask\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+      "packagesPath": "C:\\Users\\Moustafa\\.nuget\\packages\\",
+      "outputPath": "H:\\hazmtask\\Hazmmergetask\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\EL.LORD.MOHAMED\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Moustafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9459,7 +9464,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 
 namespace MiniFacebook.Models.RepoInterface
 {
-    public interface IFriendRepo
+    public interface IUserRepo
     {
-        public IEnumerable<string> getMyFriends(string id);
     }
 }
