@@ -24,10 +24,24 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ml-auto">
-                            <a class="nav-item nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
-                            <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             @if (signInManager.IsSignedIn(User))
                             {
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="Admin" asp-action="index">Users</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="Admin" asp-action="ManageRoles">Roles</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="homepage" asp-action="index">Home</a>
+                                    </li>
+                                }
+
                                 <li class="nav-item">
                                     <form method="post" asp-action="logout" asp-controller="account">
                                         <button type="submit" class="nav-link btn btn-link py-0">

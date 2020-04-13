@@ -9370,11 +9370,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\hazmtask\\Hazmmergetask\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+      "projectUniqueName": "H:\\role2\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
       "projectName": "MiniFacebook",
-      "projectPath": "H:\\hazmtask\\Hazmmergetask\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+      "projectPath": "H:\\role2\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
       "packagesPath": "C:\\Users\\Moustafa\\.nuget\\packages\\",
-      "outputPath": "H:\\hazmtask\\Hazmmergetask\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
+      "outputPath": "H:\\role2\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -5,8 +5,7 @@
     ViewData["Title"] = "Admin Page";
 }
 
-<input type="button" value="Add New User" class="btn btn-primary">
-
+<input type="button" value="Add New User" onclick="location.href='@Url.Action("AddUser", "Admin")'" />
 @using (Html.BeginForm("Users", "Admin", FormMethod.Post, htmlAttributes: new { data_ajax = "true", data_ajax_method = "Post", data_ajax_mode = "replace", data_ajax_update = "#MYData" }))
 {
     <body>
@@ -38,8 +37,6 @@
 
                                 <th scope="row">@item.UserName</th>
                                 <td>  <input type="hidden" asp-for="@item.Id" name="Id" /></td>
-                                <td><input type="checkbox" name="UserState" asp-for="@item.UserState" onclick="this.form.submit();" /></td>
-                                <td><input type="checkbox" name="UserRole" asp-for="@item.UserRole" onclick="this.form.submit();" /></td>
                             </form>
                         </tr>
 

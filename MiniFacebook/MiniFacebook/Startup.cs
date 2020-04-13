@@ -16,6 +16,7 @@ using Microsoft.Extensions.Hosting;
 using MiniFacebook.Models.Entities;
 using MiniFacebook.Models.RepoInterface;
 using MiniFacebook.Models.RepoClass;
+using MiniFacebook.Extension;
 
 namespace MiniFacebook
 {
@@ -62,7 +63,7 @@ namespace MiniFacebook
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<Role> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -82,6 +83,7 @@ namespace MiniFacebook
 
             app.UseAuthentication();
             app.UseAuthorization();
+            IdentityDataInitializer.seed(userManager, roleManager);
 
             app.UseEndpoints(endpoints =>
             {
