@@ -335,13 +335,10 @@ namespace MiniFacebook.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
-                    b.Property<bool>("UserRole")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("UserState")
+                    b.Property<int>("UserState")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
 
                     b.HasKey("Id");
 

@@ -15,6 +15,7 @@ using MiniFacebook.Data;
 
 namespace MiniFacebook.Controllers
 {
+    [AllowAnonymous]
     public class AccountController : Controller
     {
         private readonly UserManager<User> userManager;
@@ -202,14 +203,14 @@ namespace MiniFacebook.Controllers
                         };
 
                         await userManager.CreateAsync(user);
-                        var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
-                        var confirmationLink = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, token = token }, Request.Scheme);
-                        //Sending Comfirmation Mail To the User
-                        SendingMail.Send(confirmationLink, user.Email);
+                        //var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
+                        //var confirmationLink = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, token = token }, Request.Scheme);
+                        ////Sending Comfirmation Mail To the User
+                        //SendingMail.Send(confirmationLink, user.Email);
 
-                        ViewBag.WarningTitle = "Registration Successful";
-                        ViewBag.WarningMessage = "Before you can Login, please confirm your email, by clicking on the confirmation link we have emailed you";
-                        return View("SuccessfulRegistration");
+                        //ViewBag.WarningTitle = "Registration Successful";
+                        //ViewBag.WarningMessage = "Before you can Login, please confirm your email, by clicking on the confirmation link we have emailed you";
+                        //return View("SuccessfulRegistration");
                     }
 
                     // Add a login (i.e insert a row for the user in AspNetUserLogins table)
@@ -250,6 +251,11 @@ namespace MiniFacebook.Controllers
             ViewBag.ErrorTitle = "Email cannot be confirmed";
             return View("Error");
         }
-
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }
