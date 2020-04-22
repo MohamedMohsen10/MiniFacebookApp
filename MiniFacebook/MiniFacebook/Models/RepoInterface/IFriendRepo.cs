@@ -8,5 +8,7 @@ namespace MiniFacebook.Models.RepoInterface
     public interface IFriendRepo
     {
         public IEnumerable<string> getMyFriends(string id);
+        public IEnumerable<string> getFriendRequest(string id);
+
     }
 }
