@@ -20,3 +20,11 @@ $(document).ready(function () {
         return false;
     });
 });
+
+$(function () {
+    $("button[value='Google']>i").addClass('fab fa-google google-icon');
+    $("button[value='Google']").addClass('google-btn');
+    $("button[value='Facebook']>i").addClass('fab fa-facebook-f face-icon');
+    $("button[value='Facebook']").addClass(' face-btn');
+
+});

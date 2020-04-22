@@ -17,13 +17,15 @@ namespace MiniFacebook.Models.Entities
     }
     public class User:IdentityUser
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public Gender Gender { get; set; }
         [AllowNull]
         public string Bio { get; set; }
         public DateTime BirthDate { get; set; }
         [AllowNull]
         public string ProfilePic { get; set; }
-        
+
         public UserState UserState { get; set; }
         public virtual ICollection<Post> Posts{ get; set; }
         public virtual ICollection<Friend> Friends{ get; set; }

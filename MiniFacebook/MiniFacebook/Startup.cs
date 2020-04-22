@@ -85,6 +85,8 @@ namespace MiniFacebook
             app.UseAuthorization();
             IdentityDataInitializer.seed(userManager, roleManager);
 
+            app.UseSession();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
