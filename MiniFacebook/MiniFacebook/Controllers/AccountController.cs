@@ -12,19 +12,24 @@ using MailKit.Net.Smtp;
 using MailKit;
 using MimeKit;
 using MiniFacebook.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace MiniFacebook.Controllers
 {
     [AllowAnonymous]
     public class AccountController : Controller
     {
+        ApplicationDbContext db;
+
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
-
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+        
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager , ApplicationDbContext _db)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            db = _db;
+
         }
         [HttpGet]
         [AllowAnonymous]
@@ -41,8 +46,10 @@ namespace MiniFacebook.Controllers
             {
                 if (model.Gender == 0)
                 {
-                     user = new User
+                    user = new User
                     {
+                        FirstName = model.FistName,
+                        LastName=model.LastName,
                         UserName = model.Email,
                         Email = model.Email,
                         BirthDate = new DateTime(model.Year, model.Month, model.Day),
@@ -111,6 +118,9 @@ namespace MiniFacebook.Controllers
                 var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
+                    var id = db.Users.Where(u => u.Email == user.Email).Select(u => u.Id).ToList()[0];
+                    HttpContext.Session.SetString("ID", id);
+
                     if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
                     else
@@ -119,7 +129,7 @@ namespace MiniFacebook.Controllers
                 }   
                 ModelState.AddModelError("", "Invalid Login Attempt");
             }
-            return View();
+            return View(model);
         }
         [AcceptVerbs("Get", "Post")]
         [AllowAnonymous]
@@ -183,6 +193,7 @@ namespace MiniFacebook.Controllers
 
             if (signInResult.Succeeded)
             {
+                
                 return LocalRedirect(returnUrl);
             }
             // If there is no record in AspNetUserLogins table, the user may not have
@@ -201,8 +212,11 @@ namespace MiniFacebook.Controllers
                             Email = info.Principal.FindFirstValue(ClaimTypes.Email),
                             BirthDate = Convert.ToDateTime(info.Principal.FindFirstValue(ClaimTypes.DateOfBirth)),
                         };
-
+                        
                         await userManager.CreateAsync(user);
+                        var id = db.Users.Where(u => u.Email == user.Email).Select(u => u.Id).ToList()[0];
+                        HttpContext.Session.SetString("ID", id);
+                        user.EmailConfirmed = true;
                         //var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
                         //var confirmationLink = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, token = token }, Request.Scheme);
                         ////Sending Comfirmation Mail To the User

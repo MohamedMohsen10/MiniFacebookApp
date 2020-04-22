@@ -1,4 +1,4 @@
-﻿@model IQueryable<User>;
+﻿@model IQueryable<User>
 
 
 @{
@@ -10,12 +10,10 @@
 {
     <body>
         <input type="text" id="1000" name="Usrname">
-        @*@Html.TextBox("Users");*@
 
-        @*<a asp-action="Users" asp-route-id="$(" #1000").val()">Search</a>*@
         <input type="submit" value="Search" class="btn btn-default" />
 
-        <table class="table bg-dark">
+        <table class="table ">
             <thead>
                 <tr>
                     <th scope="col">Name</th>

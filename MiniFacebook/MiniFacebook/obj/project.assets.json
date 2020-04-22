@@ -9364,25 +9364,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Moustafa\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Memo0o\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\role2\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+      "projectUniqueName": "E:\\ITI\\MVC\\MiniFacebookApp\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
       "projectName": "MiniFacebook",
-      "projectPath": "H:\\role2\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
-      "packagesPath": "C:\\Users\\Moustafa\\.nuget\\packages\\",
-      "outputPath": "H:\\role2\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
+      "projectPath": "E:\\ITI\\MVC\\MiniFacebookApp\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+      "packagesPath": "C:\\Users\\Memo0o\\.nuget\\packages\\",
+      "outputPath": "E:\\ITI\\MVC\\MiniFacebookApp\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Moustafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Memo0o\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

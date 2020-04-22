@@ -11,8 +11,11 @@ namespace MiniFacebook.Models.ViewModels
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name ="Full Name")]
-        public string Username { get; set; }
+        [Display(Name ="First Name")]
+        public string FistName { get; set; }
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
 
         [Required]
         [EmailAddress]

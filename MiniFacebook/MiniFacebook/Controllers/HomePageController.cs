@@ -33,7 +33,7 @@ namespace MiniFacebook.Controllers
         //بديهيات
         //Index => Load HomePage With all Posts of user and his/her friend 
         [Authorize]
-        public IActionResult Index()
+        public IActionResult index()
         {
             var friends = _Friends.getMyFriends(HttpContext.Session.GetString("ID")).ToList();
             var posts = _Post.LoadPosts(HttpContext.Session.GetString("ID")).ToList();
