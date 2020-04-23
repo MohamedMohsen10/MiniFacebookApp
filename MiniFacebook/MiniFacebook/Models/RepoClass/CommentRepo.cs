@@ -23,11 +23,16 @@ namespace MiniFacebook.Models.RepoClass
             context.SaveChanges();
         }
 
+        public Comment getPostComment(DateTime comDate,string uid)
+        {
+            return context.Comments.Where(c => c.CommentDate == comDate && c.UserID==uid).Include("user").ToList()[0];
+        }
+
         // get all comments of post by post id
         public IEnumerable<Comment> loadPostComments(int PostID)
         {
             return context.Comments.Where(c => c.PostID == PostID)
-                .Include("CommentLikes").OrderByDescending(c => c.CommentDate);
+                .Include("CommentLikes").Include("user").OrderByDescending(c => c.CommentDate);
         }
     }
 }
