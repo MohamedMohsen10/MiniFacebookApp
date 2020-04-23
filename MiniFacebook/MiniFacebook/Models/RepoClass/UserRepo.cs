@@ -29,8 +29,8 @@ namespace MiniFacebook.Models.RepoClass
                 u.ProfilePic = user.ProfilePic;
             }
             u.PhoneNumber = user.PhoneNumber;
-            u.UserName = user.UserName;
-            u.Gender = user.Gender;
+            u.FirstName = user.FirstName;
+            u.LastName = user.LastName;
             context.SaveChanges();
         }
     }

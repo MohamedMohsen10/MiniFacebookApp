@@ -121,7 +121,7 @@ namespace MiniFacebook.Controllers
             _Post.deletePost(pID);
             var posts = _Post.LoadPosts(HttpContext.Session.GetString("ID")).ToList();            
             ViewData["UID"] = HttpContext.Session.GetString("ID");
-            return PartialView("Posted", posts.OrderByDescending(p => p.PostDate));
+            return PartialView("PostedProfile", posts.OrderByDescending(p => p.PostDate));
         }
 
         public void confirmUpdate(Post post)

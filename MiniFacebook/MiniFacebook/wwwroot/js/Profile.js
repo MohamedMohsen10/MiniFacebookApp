@@ -130,24 +130,23 @@ function showupdateProfile(uid) {
 }
 
 function updateProfile(id) {
-    var updatedUser = {};
-    updatedUser.Id = id;
-    updatedUser.PhoneNumber = document.getElementById("newPhone").value;
-    updatedUser.UserName = document.getElementById("newName").value;
-    updatedUser.ProfilePic = document.getElementById("newProfilePic").src;
+    var userUpdated = {};
+    userUpdated.Id = id;
+    userUpdated.PhoneNumber = document.getElementById("newPhone").value;
+    userUpdated.FirstName = document.getElementById("newFirstName").value;
+    userUpdated.LastName = document.getElementById("newLastName").value;
+    userUpdated.ProfilePic = document.getElementById("newProfilePic").src;
+
     $.ajax({
         method: 'Post',
         url: 'confirmProfileUpdate',
-        data: { user: updatedUser },
+        data: { user: userUpdated },
         success: function () {
-            console.log(updatedUser.UserName);
-            document.getElementById("username").innerText = updatedUser.UserName;
-            document.getElementById("phone").innerText = updatedUser.PhoneNumber;
-            document.getElementById("profileImg").src = updatedUser.ProfilePic;
+            document.getElementById("phone").innerText = userUpdated.PhoneNumber;
+            document.getElementById("username").innerText = userUpdated.FirstName + " " + userUpdated.LastName;
+            document.getElementById("profileImg").src = userUpdated.ProfilePic;
             $('#pmod').modal('hide');
-
-        }
-        
+        } 
     });
 }
 
