@@ -9369,11 +9369,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\iti\\.Net Track\\MVC\\project2\\New folder\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+      "projectUniqueName": "E:\\iti\\.Net Track\\MVC\\last project\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
       "projectName": "MiniFacebook",
-      "projectPath": "E:\\iti\\.Net Track\\MVC\\project2\\New folder\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+      "projectPath": "E:\\iti\\.Net Track\\MVC\\last project\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
       "packagesPath": "C:\\Users\\ashraf\\.nuget\\packages\\",
-      "outputPath": "E:\\iti\\.Net Track\\MVC\\project2\\New folder\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
+      "outputPath": "E:\\iti\\.Net Track\\MVC\\last project\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ashraf\\AppData\\Roaming\\NuGet\\NuGet.Config",

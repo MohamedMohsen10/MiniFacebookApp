@@ -13,7 +13,7 @@
 <div class="row">
     <img class="profileImg col-lg-3" id="profileImg" src="~/Images/@Model.ToList()[0].User.ProfilePic" />
     <div class="col-lg-8">
-        <h1 id="username">@Model.ToList()[0].User.Id</h1>
+        <h1 id="username">@Model.ToList()[0].User.FirstName @Model.ToList()[0].User.LastName</h1>
         <button class="btn btn-info" onclick="showupdateProfile('@Model.ToList()[0].User.Id')">Update</button>
         <p>BirthDate : @Model.ToList()[0].User.BirthDate</p>
         <p>Email : @Model.ToList()[0].User.Email</p>
@@ -46,7 +46,7 @@
 
 <div class="row container">
 
-@*Friend List*@
+    @*Friend List*@
     <div class="col-lg-3 friend">
         <ul>
 
@@ -135,4 +135,3 @@
         border-radius: 50%;
     }
 </style>
-
