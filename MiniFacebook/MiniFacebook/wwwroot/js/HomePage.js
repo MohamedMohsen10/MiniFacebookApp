@@ -84,13 +84,13 @@ function showComments(id) {
 }
 //---------------------------------------------------------------------------
 function addComment(pid) {
-
-
+    console.log(pid);
+    console.log(pid);
+    pid = pid
     var comm = {}
     comm.PostID = pid;
     comm.CommentText = document.getElementById('commentContent_' + pid).value;
     console.log(comm);
-   
     $.ajax({
         method: 'Post',
         url: 'AddComment',
