@@ -909,3 +909,13 @@ H:\role2\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\MiniF
 H:\role2\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
 H:\role2\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ManageRoles.cshtml.g.cs
 H:\role2\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddUser.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddUser.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ManageRoles.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\HomePage\AddComment.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\HomePage\Index.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\HomePage\LoadComments.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\HomePage\newPost.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\HomePage\Posted.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\HomePage\updatePost.cshtml.g.cs
+E:\Mohamed\ITI\26.MVC\Project\GitProject\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\HomePage\whoLikePost.cshtml.g.cs
