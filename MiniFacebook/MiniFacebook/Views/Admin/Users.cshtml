@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿@model List<ModifiyUserStateAndState>;
+=======
+﻿@model IQueryable<User>
+
+>>>>>>> master
 
 @{
     ViewData["Title"] = "Admin Page";
@@ -8,6 +13,7 @@
 <input type="button" value="Add New User" onclick="location.href='@Url.Action("AddUser", "Admin")'" />
 
     <body>
+<<<<<<< HEAD
 
         <input type="text" id="1000" name="Usrname" onkeyup="loadSearch()">
         
@@ -15,8 +21,13 @@
 
         @*<a asp-action="Users" asp-route-id="$(" #1000").val()">Search</a>*@
         <input type="submit" value="Search" class="btn btn-default" onclick="loadSearch()"/>
+=======
+        <input type="text" id="1000" name="Usrname">
 
-        <table class="table bg-dark">
+        <input type="submit" value="Search" class="btn btn-default" />
+>>>>>>> master
+
+        <table class="table ">
             <thead>
                 <tr>
                     <th scope="col">Name</th>

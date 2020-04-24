@@ -14,8 +14,8 @@ function loadData() {
                 c.push("<tr><td>" + item.id + "</td>");
                 c.push("<td>" + item.name + "</td>");
                 c.push("<td>" + item.description + "</td>");
-                c.push("<td><button type='button' class='btn btn-primary'  onclick='return getbyID(" + item.id + ");'>Edit</button> </td>");
-                c.push("<td><button type='button' class='btn btn-danger'  onclick='return Delete(" + item.id + ");'>Delele</button></td></tr>");
+                c.push(`<td><button type='button' class='btn edit-btn '  onclick='getbyID("${item.id}");'>Edit</button> </td>`);
+                c.push(`<td><button type='button' class='btn delete-btn'  onclick='Delete("${item.id}");'>Delete</button></td></tr>`);
             });
             $('.tbody').html(c.join(''));
         },
@@ -23,12 +23,12 @@ function loadData() {
             alert(errormessage.responseText);
         }
     });
-}   
+}
 function Add() {
-    
+
     $.ajax({
         url: "/Admin/ManageRoles",
-        data: { RoleDescription: $('#RoleDescription').val(), RoleName: $('#RoleName').val()},
+        data: { RoleDescription: $('#RoleDescription').val(), RoleName: $('#RoleName').val() },
         type: "POST",
         dataType: "json",
         success: function (result) {
@@ -45,16 +45,18 @@ function Add() {
 function getbyID(Id) {
     $('#RoleName').css('border-color', 'lightgrey');
     $('#RoleDescription').css('border-color', 'lightgrey');
-    
+
     $.ajax({
         url: "/Admin/getbyID/" + Id,
         typr: "GET",
         contentType: "application/json;charset=UTF-8",
         dataType: "json",
         success: function (result) {
-            $('#Id').val(result.Id);
-            $('#RoleName').val(result.Name);
-            $('#RoleDescription').val(result.Description);
+            console.log(result);
+            $('#Id').val(result.id);
+            $('#RoleName').val(result.roleName);
+
+            $('#RoleDescription').val(result.roleDescription);
             $('#btnUpdate').show();
             $('#btnAdd').hide();
         },
@@ -62,7 +64,6 @@ function getbyID(Id) {
             alert(errormessage.responseText);
         }
     });
-    return false;
 }
 function Update() {
     $.ajax({
@@ -75,6 +76,8 @@ function Update() {
             $('#Id').val("");
             $('#RoleDescription').val("");
             $('#RoleName').val("");
+            $('#btnUpdate').hide();
+            $('#btnAdd').show();
         },
         error: function (errormessage) {
             alert(errormessage.responseText);
@@ -96,49 +99,4 @@ function Delete(ID) {
             }
         });
     }
-}
-function clearTextBox() {
-    $('#ID').val("");
-    $('#Name').val("");
-    $('#Age').val("");
-    $('#State').val("");
-    $('#Country').val("");
-    $('#btnUpdate').hide();
-    $('#btnAdd').show();
-    $('#Name').css('border-color', 'lightgrey');
-    $('#Age').css('border-color', 'lightgrey');
-    $('#State').css('border-color', 'lightgrey');
-    $('#Country').css('border-color', 'lightgrey');
-}
-function validate() {
-    var isValid = true;
-    if ($('#Name').val().trim() == "") {
-        $('#Name').css('border-color', 'Red');
-        isValid = false;
-    }
-    else {
-        $('#Name').css('border-color', 'lightgrey');
-    }
-    if ($('#Age').val().trim() == "") {
-        $('#Age').css('border-color', 'Red');
-        isValid = false;
-    }
-    else {
-        $('#Age').css('border-color', 'lightgrey');
-    }
-    if ($('#State').val().trim() == "") {
-        $('#State').css('border-color', 'Red');
-        isValid = false;
-    }
-    else {
-        $('#State').css('border-color', 'lightgrey');
-    }
-    if ($('#Country').val().trim() == "") {
-        $('#Country').css('border-color', 'Red');
-        isValid = false;
-    }
-    else {
-        $('#Country').css('border-color', 'lightgrey');
-    }
-    return isValid;
 }

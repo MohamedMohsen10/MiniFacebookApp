@@ -1,0 +1,137 @@
+﻿
+@model IEnumerable<Post>
+@{
+    ViewData["Title"] = "ProfilePage";
+}
+
+
+
+
+<link href="~/css/HomePage.css" rel="stylesheet" />
+@*User Info*@
+
+<div class="row">
+    <img class="profileImg col-lg-3" id="profileImg" src="~/Images/@Model.ToList()[0].User.ProfilePic" />
+    <div class="col-lg-8">
+        <h1 id="username">@Model.ToList()[0].User.FirstName @Model.ToList()[0].User.LastName</h1>
+        <button class="btn btn-info" onclick="showupdateProfile('@Model.ToList()[0].User.Id')">Update</button>
+        <p>BirthDate : @Model.ToList()[0].User.BirthDate</p>
+        <p>Email : @Model.ToList()[0].User.Email</p>
+        <p id="phone">Phone : @Model.ToList()[0].User.PhoneNumber</p>
+        <p>Gender : @Model.ToList()[0].User.Gender.ToString()</p>
+    </div>
+</div>
+
+@*Post update*@
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="mod">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="update">
+            ...
+            <div>aljshaknahknsdjflhksj,nf ksjdkfn skj,fn sk,mcn sdmn,bc snmdbc skdjm </div>
+        </div>
+    </div>
+</div>
+
+@*profile update*@
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="pmod">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="pupdate">
+            ...
+            <div>Profile update</div>
+        </div>
+    </div>
+</div>
+
+<div class="row container">
+
+    @*Friend List*@
+    <div class="col-lg-3 friend">
+        <ul>
+
+            @foreach (var item in ViewData["Friends"] as IList<User>)
+            {
+                <li class="friend-li">
+                    <img src="~/Images/@item.ProfilePic" class="friend_img" />
+                    @item.UserName
+                </li>
+            }
+        </ul>
+    </div>
+
+
+    <div class="col-lg-3 friend">
+        <ul>
+
+            @foreach (var item in ViewData["FriendRequest"] as IList<User>)
+            {
+                <li class="friend-li">
+                    <img src="~/Images/@item.ProfilePic" class="friend_img" />
+                    @item.UserName
+                </li>
+            }
+        </ul>
+    </div>
+
+
+    @*Posts(Add-list)*@
+    <div class="col-lg-8">
+        @{await Html.RenderPartialAsync("newPostProfile");}
+
+        <div id="AllPosts" style="margin-top:20px">
+            @{await Html.RenderPartialAsync("PostedProfile", Model, ViewData);}
+        </div>
+    </div>
+
+
+</div>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="Lmodal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div id="LikeDiv" class="row" style="padding:3%">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .friend {
+        position: sticky;
+        border: solid 1px black;
+        border-radius: 20px;
+        top: 100px;
+        height: 255px;
+        padding: 10px;
+        overflow-y: scroll;
+    }
+
+    .friendReq {
+        position: sticky;
+        border: solid 1px black;
+        border-radius: 20px;
+        top: 200px;
+        height: 255px;
+        padding: 10px;
+        overflow-y: scroll;
+    }
+
+    .friend_img {
+        width: 48px;
+        border: hidden;
+        border-radius: 50%;
+    }
+
+    .friend-li {
+        margin-left: -15%;
+        list-style: none;
+    }
+
+    .profileImg {
+        width: 50px;
+        border: hidden;
+        border-radius: 50%;
+    }
+</style>

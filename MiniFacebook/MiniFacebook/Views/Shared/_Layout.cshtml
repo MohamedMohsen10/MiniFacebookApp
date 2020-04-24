@@ -1,6 +1,9 @@
-﻿
-@inject SignInManager<User> signInManager;
+﻿@inject SignInManager<User> signInManager;
+@inject UserManager<User> usermanager;
+@{ 
+    var user = await usermanager.GetUserAsync(User);
 
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +21,19 @@
             <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light nav-x py-3 ">
                 <div class="container">
 
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="images/logo.png" alt="FaceBoom"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ml-auto">
+
                             @if (signInManager.IsSignedIn(User))
                             {
+                                <input type="text" placeholder="Search" class="srch srch-sm srch-input" />
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="#" asp-action="#">Search</a>
+                                </li>
                                 @if (User.IsInRole("Admin"))
                                 {
                                     <li class="nav-item">
@@ -38,17 +46,26 @@
                                 else
                                 {
                                     <li class="nav-item">
-                                        <a class="nav-link" asp-controller="homepage" asp-action="index">Home</a>
+                                        <a class="nav-link" asp-controller="home" asp-action="index">
+                                            Welcome @(user.FirstName ?? user.UserName)
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/homepage/index">Home</a>
                                     </li>
                                 }
 
                                 <li class="nav-item">
+                                    <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/ChangePassword"><i class="fas fa-cog"></i></a>
+                                </li>
+                                <li class="nav-item">
                                     <form method="post" asp-action="logout" asp-controller="account">
-                                        <button type="submit" class="nav-link btn btn-link py-0">
-                                            Logout @User.Identity.Name
+                                        <button type="submit" class="logoutbtn">
+                                            Logout
                                         </button>
                                     </form>
                                 </li>
+
                             }
                             else
                             {
@@ -66,6 +83,7 @@
         </div>
     </section>
 
+
     <!--Main-Content-->
     <section class="">
         <div class="container">
@@ -76,7 +94,7 @@
     </section>
 
     <!--Footer-->
-    <section id="footer" class="footer-section p-3">
+    <section id="footer" class="footer-section p-3 m-footer">
         <footer class="container">
             <p class="copyright-text">
                 &copy; 2020 All Rights Reserved
@@ -98,6 +116,9 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/all.js"></script>
+    <script src="~/js/HomePage.js"></script>
+    <script src="~/js/Profile.js"></script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

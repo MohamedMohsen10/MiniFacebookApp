@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "E:\\Mohamed\\ITI\\26.MVC\\Project\\GitProject\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\EL.LORD.MOHAMED\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "E:\\iti\\.Net Track\\MVC\\last project\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj": {}
+  },
+  "projects": {
+    "E:\\iti\\.Net Track\\MVC\\last project\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\iti\\.Net Track\\MVC\\last project\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+        "projectName": "MiniFacebook",
+        "projectPath": "E:\\iti\\.Net Track\\MVC\\last project\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+        "packagesPath": "C:\\Users\\ashraf\\.nuget\\packages\\",
+        "outputPath": "E:\\iti\\.Net Track\\MVC\\last project\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ashraf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> master
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

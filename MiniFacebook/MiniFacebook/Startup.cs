@@ -48,6 +48,8 @@ namespace MiniFacebook
             services.AddScoped<ICommentLikeRepo, CommentLikeRepo>();
             services.AddScoped<IPostLikeRepo, PostLikeRepo>();
             services.AddScoped<IFriendRepo, FriendRepo>();
+            services.AddScoped<IUserRepo, UserRepo>();
+
             services.AddSession(options => { });
             services.AddAuthentication()
                 .AddGoogle(options =>
@@ -84,6 +86,8 @@ namespace MiniFacebook
             app.UseAuthentication();
             app.UseAuthorization();
             IdentityDataInitializer.seed(userManager, roleManager);
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

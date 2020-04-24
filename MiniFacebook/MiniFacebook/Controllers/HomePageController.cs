@@ -33,7 +33,7 @@ namespace MiniFacebook.Controllers
         //بديهيات
         //Index => Load HomePage With all Posts of user and his/her friend 
         [Authorize]
-        public IActionResult Index()
+        public IActionResult index()
         {
             var friends = _Friends.getMyFriends(HttpContext.Session.GetString("ID")).ToList();
             var posts = _Post.LoadPosts(HttpContext.Session.GetString("ID")).ToList();
@@ -76,7 +76,7 @@ namespace MiniFacebook.Controllers
             c.UserID = HttpContext.Session.GetString("ID");
             _PostComments.addComment(c);
             ViewData["UID"] = HttpContext.Session.GetString("ID");
-            return PartialView(c);
+            return PartialView(_PostComments.getPostComment(c.CommentDate,c.UserID));
         }
         //LoadComments => Load All Comments on a post to appeare to the user 
         public IActionResult LoadComments(int postid)
