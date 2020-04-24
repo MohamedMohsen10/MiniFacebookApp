@@ -6,14 +6,25 @@
     <div class="row">
         <img src="~/Images/download.png" class="circle img-fluid" style="float:left" />
         <div class="row d-inline-block" style="margin-left:2px ;float:left;">
-            <a href="#" class="btn-link"><h6 class="col-12">@Model.UserName</h6></a>
+            <a href="#" class="btn-link"><h6 class="col-12">@Model.FirstName @Model.LastName</h6></a>
             <p class="col-12 ">@Model.Email</p>
         </div>
     </div>
     <hr />
-    
-    <input value="@Model.PhoneNumber" id="newPhone"/>
-    <input value="@Model.UserName" id="newName"/>
+    <div class="row">
+        <div class="col-6 mb-2">
+            <input class="form-control" value="@Model.FirstName" id="newFname" />
+        </div>
+        <div class="col-6 mb-2">
+            <input class="form-control" value="@Model.LastName" id="newLname" />
+        </div>
+        <div class="col-12 mb-2">
+            <input class="form-control" value="@Model.Bio" id="newBio" />
+        </div>
+        <div class="col-12 mb-2">
+            <input class="form-control" value="@Model.PhoneNumber" id="newPhone" />
+        </div>
+    </div>
     @{
         if (Model.ProfilePic != null)
         {
@@ -25,6 +36,6 @@
         }
     }
     <hr />
-    <input type="button" class="offset-4 col-2 btn btn-primary" value="Update" onclick="updateProfile('@Model.Id')" />
+    <input type="button" class="btn animated-button" value="Update" onclick="updateProfile('@Model.Id')" />
 
 </div>

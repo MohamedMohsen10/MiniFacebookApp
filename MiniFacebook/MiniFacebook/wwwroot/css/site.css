@@ -39,7 +39,12 @@ a, a:hover {
     text-transform: uppercase;
     font-family: "Roboto",sans-serif;
 }
-
+.h7 {
+    color: #333;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    font-family: "Roboto",sans-serif;
+}
 .margin-sec {
     margin-top: 8rem;
 }
@@ -258,10 +263,119 @@ input:hover {
         color: white;
     }
 /***************************************************************/
+
+/*Home & Profile PAGES*/
+.pad-2 {
+    padding: 1%;
+}
+
+.card-header {
+    background-color: white;
+}
+
+.no-resize {
+    resize: none
+}
+
+.vertical-mid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mar-btm {
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.center {
+    margin-left: 27%;
+    width: 48.8%;
+    margin-top: 20px;
+}
+
+.border-rad {
+    border-radius: 20px;
+}
+
+.dis-none {
+    display: none;
+}
+
+.camera-icon {
+    cursor: pointer;
+    color: #1b75bc;
+}
+    .camera-icon:hover {
+        color: #111f4d;
+    }
+
+.animated-button:hover .camera-icon {
+    color: white;
+}
+
+.post-button {
+    width: 95%;
+    color: grey;
+    margin: 0 0 0 5%;
+    cursor: pointer;
+    position: relative;
+    font-weight: 500;
+    border: 2px solid #1b75bc;
+}
+
+    .post-button:hover {
+        background-color: #111f4d;
+        border: 2px solid white;
+        color: white;
+        font-weight: 500;
+    }
+
+.usr-name {
+    font-weight: bold !important;
+    font-family: "Roboto",sans-serif;
+    color: #1b75bc;
+}
+.usr-name:hover{
+    text-decoration:underline;
+}
+
+.btn-icon {
+    font-weight: 400;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+
+    .btn-icon:hover {
+        color: #007bff;
+        text-decoration: underline;
+    }
+@media(min-width:992px) {
+    .upld-btn {
+        width: 75%;
+    }
+    .text-left-cus {
+        text-align:left;
+    }
+}
+@media(max-width:992px) {
+    .upld-btn-sm {
+        width: 50%;
+    }
+}
+
+
+/***************************************************************/
 /* footer*/
 .footer-section {
-    background-color: #222;
-    margin-top:auto;
+    background-color: #191e32;
+    margin-top: auto;
 }
 
 .copyright-text {

@@ -74,8 +74,8 @@ function showComments(id) {
         data: { postid: id },
         success: function (data) {
             document.getElementById('comments_' + id).innerHTML = '';
-            data += '<br /> <input type="text" class="col-8 form-control" id="commentContent_' + id + '"/>';
-            data += '<button class="btn btn-primary col-3 " style="float:right; margin-top:-7.7%" id="addcomment_"' + id + ' onclick="addComment(' + id + ')">Comment</button>';
+            data += '<br /> <input type="text" class="col-7 d-inline form-control" id="commentContent_' + id + '"/>';
+            data += '<button class="btn animated-button col-4 ml-4 mb-1 " id="addcomment_"' + id + ' onclick="addComment(' + id + ')">Comment</button>';
             $('#comments_' + id).prepend(data);
         }
     });
@@ -132,20 +132,24 @@ function showupdateProfile(uid) {
 function updateProfile(id) {
     var updatedUser = {};
     updatedUser.Id = id;
+    updatedUser.Birthdate = document.getElementById("newBirthdate").value;
+    updatedUser.Bio = document.getElementById("newBio").value;
     updatedUser.PhoneNumber = document.getElementById("newPhone").value;
-    updatedUser.UserName = document.getElementById("newName").value;
+    updatedUser.Fname = document.getElementById("newFname").value;
+    updatedUser.Lname = document.getElementById("newLname").value;
     updatedUser.ProfilePic = document.getElementById("newProfilePic").src;
     $.ajax({
         method: 'Post',
         url: 'confirmProfileUpdate',
         data: { user: updatedUser },
         success: function () {
-            console.log(updatedUser.UserName);
-            document.getElementById("username").innerText = updatedUser.UserName;
+            document.getElementById("Bio").innerText = updatedUser.Bio;
+            document.getElementById("bdate").innerText = updatedUser.Birthdate;
             document.getElementById("phone").innerText = updatedUser.PhoneNumber;
+            document.getElementById("fname").innerText = updatedUser.Fname;
+            document.getElementById("lname").innerText = updatedUser.Lname;
             document.getElementById("profileImg").src = updatedUser.ProfilePic;
             $('#pmod').modal('hide');
-
         }
         
     });

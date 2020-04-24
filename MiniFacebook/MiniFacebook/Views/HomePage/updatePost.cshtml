@@ -6,7 +6,7 @@
         <div class="row">
             <img src="~/Images/download.png" class="circle img-fluid" style="float:left" />
             <div class="row d-inline-block" style="margin-left:2px ;float:left;">
-                <a href="#" class="btn-link"><h6 class="col-12">@Model.User.UserName</h6></a>
+                <a href="#" class="usr-name"><h6 class="col-12">@Model.User.UserName</h6></a>
                 <p class="col-12 ">@Model.PostDate</p>
             </div>
         </div>
@@ -24,6 +24,6 @@
         }
         <hr />
         <input class="col-5" type="file" id="iimg" onchange="selected(@Model.PostID)" />
-        <input type="button" class="offset-4 col-2 btn btn-primary" value="Update" onclick="updatePost(@Model.PostID)" />
+        <input type="button" class="ml-4 col-6 btn animated-button" value="Update" onclick="updatePost(@Model.PostID)" />
 
     </div>

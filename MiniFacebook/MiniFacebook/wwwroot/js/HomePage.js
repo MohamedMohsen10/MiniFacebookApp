@@ -75,8 +75,8 @@ function showComments(id) {
         data: { postid: id }, 
         success: function (data) {
             document.getElementById('comments_' + id).innerHTML = '';
-            data += '<br /> <input type="text" class="col-8 form-control" id="commentContent_' + id +'"/>';
-            data += '<button class="btn btn-primary col-3 " style="float:right; margin-top:-7.7%" id="addcomment_"' + id + ' onclick="addComment(' + id + ')">Comment</button>';
+            data += '<br /> <input type="text" class="col-7 d-inline form-control" id="commentContent_' + id +'"/>';
+            data += '<button class="btn animated-button col-4 ml-4 mb-1 " id="addcomment_"' + id + ' onclick="addComment(' + id + ')">Comment</button>';
             $('#comments_' + id).prepend(data);
         }
     });
@@ -211,4 +211,5 @@ function likeComment(id) {
 
 
 ///////////////////////////////////////////////////////
+
 

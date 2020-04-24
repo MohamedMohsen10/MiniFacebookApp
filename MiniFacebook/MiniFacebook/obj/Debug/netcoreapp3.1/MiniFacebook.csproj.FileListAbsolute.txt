@@ -1106,3 +1106,11 @@ E:\ITI\MVC\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Areas\Identit
 E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
 E:\ITI\MVC\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
 E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
+E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Profile\AddComment.cshtml.g.cs
+E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Profile\LoadComments.cshtml.g.cs
+E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Profile\newPostProfile.cshtml.g.cs
+E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Profile\PostedProfile.cshtml.g.cs
+E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Profile\ProfilePage.cshtml.g.cs
+E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Profile\updatePost.cshtml.g.cs
+E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Profile\updateProfile.cshtml.g.cs
+E:\ITI\MVC\MiniFacebookApp\MiniFacebookApp\MiniFacebook\MiniFacebook\obj\Debug\netcoreapp3.1\Razor\Views\Profile\whoLikePost.cshtml.g.cs

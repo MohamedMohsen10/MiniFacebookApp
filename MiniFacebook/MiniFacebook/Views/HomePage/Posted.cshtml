@@ -9,21 +9,21 @@
 
 @foreach (var item in Model)
 {
-    <div class="container mar-btm">
+    <div class="container mar-btm ">
         <div class="row">
-            <div class="card btm border-rad col-12 col-md-8 col-lg-6 offset-0  offset-md-2 offset-lg-3">
+            <div class="card btm border-rad col-12 col-lg-8 offset-lg-2 shadows">
                 <div class="card-header">
-                    <img src="~/Images/download.png" class="circle img-fluid" style="float:left" />
+                    <img src="~/Images/download.png" class="circle img-fluid float-left" />
                     <div class="row d-inline-block" style="margin-left:2px ;float:left;">
-                        <a href="#" class="btn-link"><h6 class="col-12">@item.User.UserName</h6></a>
+                        <a href="#" class="usr-name"><h6 class="col-12">@item.User.FirstName @item.User.LastName</h6></a>
                         <p class="col-12 ">@item.PostDate.Date</p>
                     </div>
                     @{
                         if (item.UserID == (string)ViewData["UID"])
                         {
                             <div class="d-inline-block float-right">
-                                <button id="update_@item.PostID" onclick="showupdatePost(this.id)" class="btn btn-link"><i class="fa fa-edit"></i></button>
-                                <button class="btn btn-link" id="delete_@item.PostID" onclick="deletePost(this.id)"><i class="fa fa-window-close"></i></button>
+                                <button id="update_@item.PostID" onclick="showupdatePost(this.id)" class="btn btn-icon"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-icon" id="delete_@item.PostID" onclick="deletePost(this.id)"><i class="fa fa-window-close"></i></button>
                             </div>
                         }
                     }
@@ -58,14 +58,12 @@
                             }
                         }
                         <button class="btn btn-light" id="showComments_@item.PostID" onclick="showComments(this.id)"><i class="fa fa-comments"></i> Comments</button>
-                        <button class="btn btn-link " style="float:right" id="nolike_@item.PostID" onclick="showLikes(@item.PostID)">@item.PostLikes.Count Likes</button>
+                        <button class="btn btn-icon " style="float:right" id="nolike_@item.PostID" onclick="showLikes(@item.PostID)">@item.PostLikes.Count Likes</button>
                     </div>
                 </div>
-                <div class="card-body row dis-none" id="comments_@item.PostID">
-
-                    <br />
-                    <input type="text" class="col-8 form-control" id="commentContent_@item.PostID" />
-                    <button class="btn btn-primary col-3 " style="float:right; margin-top:-7.7%" id="addcomment_@item.PostID" onclick="addComment(this.id)">Comment</button>
+                <div class="card-body dis-none" id="comments_@item.PostID">
+                    <input type="text" class="col-7 d-inline form-control" id="commentContent_@item.PostID" />
+                    <button class="btn animated-button col-4 col-4 mb-1 ml-4 " id="addcomment_@item.PostID" onclick="addComment(this.id)">Comment</button>
                 </div>
             </div>
         </div>

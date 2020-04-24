@@ -11,9 +11,10 @@ using MiniFacebook.Data;
 using MiniFacebook.Models.Entities;
 using MiniFacebook.Models.ViewModels;
 
+
 namespace MiniFacebook.Controllers
 {
-    [Authorize(Roles="Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
 
@@ -39,25 +40,64 @@ namespace MiniFacebook.Controllers
         //    }
         //}
 
+        //[HttpGet]
+        //public IActionResult Index()
+        //{
+
+        //    return UsersAsync(null);
+        //}
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> UsersAsync(string Usrname)
         {
 
-            return Users(null);
-        }
-        [HttpGet]
-        public IActionResult Users(string Usrname)
-        {
+            ViewData["Roles"] = new SelectList(roleManager.Roles, "Id", "Name");
             if (Usrname == null)
             {
-                return View(userManager.Users);
+                List<ModifiyUserStateAndState> users = new List<ModifiyUserStateAndState>();
+                var x = userManager.Users;
+                foreach (var item in x)
+                {
+                    ModifiyUserStateAndState user = new ModifiyUserStateAndState();
+
+                    user.UserId = item.Id;
+                    user.UserName = item.UserName;
+                    if (item.UserState == UserState.blocked)
+                        user.UserState = false;
+                    else
+                        user.UserState = true;
+                    IList<String> _role = await userManager.GetRolesAsync(item);
+
+                    user.RoleName = _role.FirstOrDefault();
+                    users.Add(user);
+                }
+
+                return View(users);
             }
             else
             {
+                List<ModifiyUserStateAndState> usersList = new List<ModifiyUserStateAndState>();
+
                 var _users = userManager.Users.Where((a) => a.UserName.Contains(Usrname));
+                foreach (var item in _users)
+                {
+                    ModifiyUserStateAndState user = new ModifiyUserStateAndState();
+
+                    user.UserId = item.Id;
+                    user.UserName = item.UserName;
+                    if (item.UserState == UserState.blocked)
+                        user.UserState = false;
+                    else
+                        user.UserState = true;
+                    IList<String> _role = await userManager.GetRolesAsync(item);
+
+                    user.RoleName = _role.FirstOrDefault();
+                    usersList.Add(user);
+
+                }
+
                 //foreach (var _user in _users)
                 // userSearchManager.UpdateAsync(_user);
-                return View(_users);
+                return View(usersList);
             }
 
 
@@ -66,6 +106,76 @@ namespace MiniFacebook.Controllers
 
             //  ViewBag.Authority = roleManager.Roles;
         }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> updatestatus(ModifiyUserStateAndState adminInput)
+        {
+            var _user = userManager.Users.FirstOrDefault((a) => a.Id == adminInput.UserId);
+            if (adminInput.UserState == true)
+                _user.UserState = UserState.blocked;
+            else
+                _user.UserState = UserState.notblocked;
+            IdentityResult x = await userManager.UpdateAsync(_user);
+            return Json(_user);
+        }
+
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> updateRole(ModifiyUserStateAndState adminInput)
+        {
+            var _user = userManager.Users.FirstOrDefault((a) => a.Id == adminInput.UserId);
+            
+            IList<String> _role = await userManager.GetRolesAsync(_user);
+
+            await userManager.RemoveFromRolesAsync(_user, _role);
+            var findRole = await roleManager.FindByIdAsync(adminInput.RoleName);
+            await userManager.AddToRoleAsync(_user, findRole.Name);
+
+
+            IdentityResult x = await userManager.UpdateAsync(_user);
+            return Json(_user);
+        }
+
+
+
+
+
+          [HttpGet]
+        public async Task<IActionResult> reLoadTData(string Usrname)
+        {
+
+            ViewData["Roles"] = new SelectList(roleManager.Roles, "Id", "Name");
+   
+                List<ModifiyUserStateAndState> usersList = new List<ModifiyUserStateAndState>();
+
+                var _users = userManager.Users.Where((a) => a.UserName.Contains(Usrname));
+                foreach (var item in _users)
+                {
+                    ModifiyUserStateAndState user = new ModifiyUserStateAndState();
+
+                    user.UserId = item.Id;
+                    user.UserName = item.UserName;
+                    if (item.UserState == UserState.blocked)
+                        user.UserState = false;
+                    else
+                        user.UserState = true;
+                    IList<String> _role = await userManager.GetRolesAsync(item);
+
+                    user.RoleName = _role.FirstOrDefault();
+                    usersList.Add(user);
+
+                }
+                return View(usersList);
+            }
+
+
+
+
+
 
         //[HttpPost]
         //public async Task<IActionResult> UsersAsync(User adminInput)
@@ -88,57 +198,62 @@ namespace MiniFacebook.Controllers
         //    return View();
         //}
         [HttpPost]
-        public async Task<IActionResult> UsersAsync(User adminInput, string Usrname)
+        public async Task<IActionResult> UsersAsync(ModifiyUserStateAndState adminInput, string Usrname)
         {
             //if(adminInput.UserState==)
 
 
 
-            if (Usrname == null)
+            ViewData["Roles"] = new SelectList(roleManager.Roles, "Id", "Name");
+
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    //roleManager.FindByIdAsync(adminInput.Id).Status;
-                    //foreach (var item in adminInput)
-                    //{
-                    var _user = userManager.Users.FirstOrDefault((a) => a.Id == adminInput.Id);
-                    _user.UserState = adminInput.UserState;
-                    //userManager.UpdateAsync(adminInput);
-                    IdentityResult x = await userManager.UpdateAsync(_user);
+                //roleManager.FindByIdAsync(adminInput.Id).Status;
+                //foreach (var item in adminInput)
+                //{
 
-                    //}
-                    return View(userManager.Users);
-                }
+                var _user = userManager.Users.FirstOrDefault((a) => a.Id == adminInput.UserId);
+                if (adminInput.UserState == false)
+                    _user.UserState = UserState.blocked;
+                else
+                    _user.UserState = UserState.notblocked;
+                IList<String> _role = await userManager.GetRolesAsync(_user);
+
+                await userManager.RemoveFromRolesAsync(_user, _role);
+                var findRole = await roleManager.FindByIdAsync(adminInput.RoleName);
+                await userManager.AddToRoleAsync(_user, findRole.Name);
+
+
+                IdentityResult x = await userManager.UpdateAsync(_user);
+
+                //}
+                
             }
+            List<ModifiyUserStateAndState> users = new List<ModifiyUserStateAndState>();
+            var xuser = userManager.Users;
 
-            else
+
+            foreach (var item in xuser)
             {
-                var _users = userManager.Users.Where((a) => a.UserName.Contains(Usrname));
-                //foreach (var _user in _users)
-                // userSearchManager.UpdateAsync(_user);
+                ModifiyUserStateAndState user = new ModifiyUserStateAndState();
 
+                user.UserId = item.Id;
+                user.UserName = item.UserName;
+                if (item.UserState == UserState.blocked)
+                    user.UserState = false;
+                else
+                    user.UserState = true;
+                IList<String> _roles = await userManager.GetRolesAsync(item);
 
-                if (ModelState.IsValid)
-                {
-                    //roleManager.FindByIdAsync(adminInput.Id).Status;
-                    //foreach (var item in adminInput)
-                    //{
-                    var _user = userManager.Users.FirstOrDefault((a) => a.Id == adminInput.Id);
-                    _user.UserState = adminInput.UserState;
-                    //userManager.UpdateAsync(adminInput);
-                    IdentityResult x = await userManager.UpdateAsync(_user);
-
-                    //}
-                    return View(_users);
-                }
-
-                return View(_users);
+                user.RoleName = _roles.FirstOrDefault();
+                users.Add(user);
             }
-
-
-
-            return View();
+            return View(users);
         }
+
+
+
+
 
         [HttpGet]
         public IActionResult ManageRoles()

@@ -41,6 +41,9 @@ namespace MiniFacebook.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Confirm new password")]
             [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            public string Firstname { get; set; }
+            public string Lastname { get; set; }
         }
 
         public async Task<IActionResult> OnGetAsync()
@@ -73,8 +76,11 @@ namespace MiniFacebook.Areas.Identity.Pages.Account.Manage
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
+            user.FirstName = Input.Firstname;
+            user.LastName = Input.Lastname;
 
-            var addPasswordResult = await _userManager.AddPasswordAsync(user, Input.NewPassword);
+
+        var addPasswordResult = await _userManager.AddPasswordAsync(user, Input.NewPassword);
             if (!addPasswordResult.Succeeded)
             {
                 foreach (var error in addPasswordResult.Errors)

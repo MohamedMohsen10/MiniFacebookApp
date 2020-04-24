@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\iti\\.Net Track\\MVC\\project2\\New folder\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj": {}
+    "E:\\ITI\\MVC\\MiniFacebookApp\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj": {}
   },
   "projects": {
-    "E:\\iti\\.Net Track\\MVC\\project2\\New folder\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj": {
+    "E:\\ITI\\MVC\\MiniFacebookApp\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\iti\\.Net Track\\MVC\\project2\\New folder\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+        "projectUniqueName": "E:\\ITI\\MVC\\MiniFacebookApp\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
         "projectName": "MiniFacebook",
-        "projectPath": "E:\\iti\\.Net Track\\MVC\\project2\\New folder\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
-        "packagesPath": "C:\\Users\\ashraf\\.nuget\\packages\\",
-        "outputPath": "E:\\iti\\.Net Track\\MVC\\project2\\New folder\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
+        "projectPath": "E:\\ITI\\MVC\\MiniFacebookApp\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\MiniFacebook.csproj",
+        "packagesPath": "C:\\Users\\Memo0o\\.nuget\\packages\\",
+        "outputPath": "E:\\ITI\\MVC\\MiniFacebookApp\\MiniFacebookApp\\MiniFacebook\\MiniFacebook\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ashraf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Memo0o\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
